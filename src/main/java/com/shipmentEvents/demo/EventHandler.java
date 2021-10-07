@@ -143,7 +143,7 @@ public class EventHandler implements RequestHandler<ScheduledEvent, String> {
     }
     
 
-    private void deleteProcessedFiles(Map<String, List<KeyVersion>> filesToDelete) {
+    private void deleteProcessedFiles(Map<String, List<KeyVersion filesToDelete) {
       final AmazonS3 s3Client = EventHandler.getS3Client();
       for (Entry<String, List<KeyVersion>> entry : filesToDelete.entrySet()) {
           final DeleteObjectsRequest deleteRequest = new DeleteObjectsRequest(entry.getKey()).withKeys(entry.getValue()).withQuiet(false);
